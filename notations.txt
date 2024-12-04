@@ -1,2 +1,5 @@
 #Funcition to create work folders#
 mkdir {nmap,content,exploits} -> wich mkt
+
+#SQLI
+' or 1 = 1-- -
