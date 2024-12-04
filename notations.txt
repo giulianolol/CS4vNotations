@@ -1,0 +1,2 @@
+#Funcition to create work folders#
+mkdir {nmap,content,exploits}
