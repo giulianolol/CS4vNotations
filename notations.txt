@@ -1,2 +1,2 @@
 #Funcition to create work folders#
-mkdir {nmap,content,exploits}
+mkdir {nmap,content,exploits} -> wich mkt
