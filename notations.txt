@@ -3,3 +3,5 @@ mkdir {nmap,content,exploits} -> wich mkt
 
 #SQLI
 ' or 1 = 1-- -
+
+Gifts' union select schema_name,NULL from information_schema.schemata-- -
