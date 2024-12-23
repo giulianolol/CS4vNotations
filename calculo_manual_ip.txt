@@ -1,0 +1,52 @@
+172.14.15.16/17
+
+10101100.00001110.00001111.00010000 (172.14.15.16)
+11111111.11111111.10000000.00000000 (255.255.128.0) - Mascara de Red
+-----------------------------------
+10101100.00001110.00000000.00000000 -AND- 172.14.0.0 - Network ID
+10101100.00001110.01111111.11111111 (172.14.127.255) - Brodcast Address
+
+192.112.114.29/13 - IP
+
+1)Representación de la IP en binario con echo "obase=2;xxx" | bc
+
+11000000.01110000.01110010.00011101 -> IP en binario (Recordar agregar ceros adelante -hasta llegar a ocho (8)- en caso de ser necesario ya que son Ocho Bits) :)
+
+2)Bucar la máscara de Red
+
+192.112.114.29/13 -> Miramos el "/x", en este caso es 13, por lo tanto tenemos que representar la IP en binario dandole el valor de 1 (uno) desde la izquierda hacia la derecha una x (13) cantidad de veces
+
+11111111.11111000.00000000.00000000 -> Máscara de red Hay 13 "1"
+
+2-b) Para pasar esto a número decimal tengo que calcular como representaría en decimal el octeto que tenga cero/s y uno/s simultaneamente, en este caso el segundo octeto.
+usamos echo "ibase=2;11111000" | bc
+
+255.248.0.0
+
+3) Para obtener el Network ID aplicamos un AND entre la forma binaria de la IP y la máscara de RED (Agregamos un uno cada vez que ambos valores sean 1)
+
+11000000.01110000.01110010.00011101 (192.112.114.29)
+11111111.11111000.00000000.00000000 (255.248.0.0)
+------------------------------------
+11000000.01110000.00000000.00000000 (192.112.0.0)
+
+4)Para tener el Brodcast Address le restamos a 32 el numero que tenga en el "/x" la IP, en este caso 13. Sería 19
+Luego partiendo desde el final de la IP, llenamos de valores "1" todo, hasta la posicion nro 19 (osea el resultado de la resta anterior)
+
+11000000.01110111.11111111.11111111
+
+
+13.51.47.131/4
+
+00001101.00110011.00101111.10000011 (13.51.47.131) -> IP
+11110000.00000000.00000000.00000000 (240.0.0.0) -> NetMask
+00000000.00000000.00000000.00000000 (0.0.0.0/4) -> NetWork ID
+00001111.11111111.11111111.11111111 (15.255.255.255) -> Brodcast Address
+
+
+10.18.51.23/23
+
+00001010.00010010.00110011.00010111 (10.18.51.23) -> IP
+11111111.11111111.11111110.00000000 (255.255.254.0) -> NetMask
+00001010.00010010.00110010.00000000 (10.18.50.0/23) -> NetWork ID
+00001010.00010010.00110011.11111111 (10.18.51.255) -> Brodcast Address

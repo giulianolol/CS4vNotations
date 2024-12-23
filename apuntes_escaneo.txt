@@ -1,0 +1,38 @@
+-Ejemplos de diferentes tipos de escaneos-
+nmap -p- -T5 --open 192.168.111.1 -v -n
+nmap -p- -T5 -sT --open [ip] -v -n -Pn
+nmap --top-ports 500--open -sV [ip] -v -n -Pn
+nmap -sn [ip] 192.168.111.0/24
+nmap -O 192.168.111.42
+
+-Escaneos más optimos-
+nmap -p22,80 -sV 192.168.111.1
+nmap -p22 192.168.111.1 --mtu [multiplo de 8 (8,16,24,32)]
+nmap -p- (todos los puertos) --open -sS --min-rate 5000 (Minima cantida de paquetes por segundo) -v (verbose para una descripción minima de lo que está pasando) -n (para que no aplique resolución DNS) -Pn (para que considere la ip activa y no haga más validaciones) 192.168.111.1
+nmap -p22 192.168.111.1 -sV (Para detectar el servicio y la versión que corren) -sC (Lanzar un conjunto de scripts básicos)
+nmap -p22 192.168.111.1 --scripts (asignar un script en especifico)
+
+-MANUAL-
+nmap --help
+
+-Modificar longitud de paquete para evitar sospecha
+nmap -p22 192.168.111.1 --data-length [numero que se le va a sumar al tamaño de paquete origianl (58)]
+
+-Modificar Mac Address-
+nmap -p22 192.168.111.1 --spoof-mac Dell -Pn
+
+-Capturar Tráfico-
+wireshark -r Captura.cap &> /dev/null & disown
+
+-Modo Escucha-
+tcpdump -i [device(ens33)] -2 Caputa.cap -v
+
+-Scripts-
+
+/usr/share/nmap/scripts/ftp-anon.nse -> Si "usuario anonimo" está activado te avisa
+
+/usr/share/nmap/scripts/http-robots.txt.nse -> Si existe la ruta /robots.txt te avisa
+
+ locate .nse | xargs grep "categories" | grep -oP '".*?"' | sort -u -> Listar las categorias para tener mejor identificado los scripts
+
+nmap -p22 192.168.111.1 --script="vuln and safe" -> Estamos ejecutando scripts que cumplan con estas categorías
