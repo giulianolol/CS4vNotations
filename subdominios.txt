@@ -1,0 +1,22 @@
+### PhoneBook ###
+Herramienta para buscar SUBdominio - WEB
+
+### CTFR ###
+Herramienta para buscar SUBdominio - CONSOLA
+- python3 ctfr.py -d tinder.com
+- Documentacion en https://github.com/UnaPibaGeek/ctfr
+
+### gobuster ###
+Herramienta para aplicar ataques activos/agresivos, esta programada en GO y es óptima en cuanto a manejo de sockets y conexiones
+gobuster vhost -h -> Para ver ayuda
+
+### WFUZZ ### 
+Herramamienta para subdominio activo y de caracter agresivo
+
+wfuzz -c --hc=403 -t 20 -w /usr/share/SecLists/Discovery/DNS/subdomains-top1million-5000.txt -H "Host: FUZZ.tinder.com" https://tinder.com
+hc -> hide code
+sc -> show code
+-t -> threads (hilos)
+-H -> Host
+FUZZ -> Palabra reservada para aplicar Payload
+-w -> Diccionary Directory

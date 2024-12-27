@@ -36,3 +36,9 @@ tcpdump -i [device(ens33)] -2 Caputa.cap -v
  locate .nse | xargs grep "categories" | grep -oP '".*?"' | sort -u -> Listar las categorias para tener mejor identificado los scripts
 
 nmap -p22 192.168.111.1 --script="vuln and safe" -> Estamos ejecutando scripts que cumplan con estas categorías
+
+·Herramienta similar a nmap·
+
+masscan
+
+Simplemente ejecutando el comando masscan podemos ver como usarlo =)
