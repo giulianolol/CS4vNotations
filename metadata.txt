@@ -1,0 +1,4 @@
+# exitfool #
+Sirve para ver la metadata dentro de un archivo.
+exitfool [nombre_archivo.x]
+

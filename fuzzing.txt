@@ -1,0 +1,8 @@
+·GoBuster
+gobuster https://www.miwifi.com/ -> Sirve para subdominios y tambien para 
+
+gobuster dir -u https://www.miwifi.com/ -w /usr/share/SecList/Discovery/Web-Content/directory... -t 200
+
+·FFUF
+./ffuf -c -t 200 -w [Direc del diccionario] -u [direccion pagina web] --mc=200 --> Todo esto tiene que ser dentro de la carpeta OTP como superusuario (SU)
+

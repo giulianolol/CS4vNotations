@@ -20,3 +20,11 @@ sc -> show code
 -H -> Host
 FUZZ -> Palabra reservada para aplicar Payload
 -w -> Diccionary Directory
+
+### sublist3r.py
+
+- python3 sublist3r.py -d tinder.com
+
+### Analizar tecnologías por consola - WhatWeb
+
+whatweb https://miwifi.com
